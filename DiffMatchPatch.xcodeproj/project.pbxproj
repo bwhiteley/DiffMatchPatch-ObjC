@@ -67,7 +67,6 @@
 		4A776A2817B3BE170049FFA7 /* NSString+EscapeHTMLCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4FB4D9175AD35600E84A45 /* NSString+EscapeHTMLCharacters.m */; };
 		4A776A2A17B3BE380049FFA7 /* speedtest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A776A2917B3BE380049FFA7 /* speedtest.m */; };
 		4A776A2B17B3BE9E0049FFA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A4B55AC1718B09B0050A4F2 /* Cocoa.framework */; };
-		CCC7F7E92010482E002CE5F8 /* DiffMatchPatch.h in Headers */ = {isa = PBXBuildFile; fileRef = CCC7F7E72010482E002CE5F8 /* DiffMatchPatch.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CCC7F7EC2010482E002CE5F8 /* DiffMatchPatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCC7F7E52010482E002CE5F8 /* DiffMatchPatch.framework */; };
 		CCC7F7ED2010482E002CE5F8 /* DiffMatchPatch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CCC7F7E52010482E002CE5F8 /* DiffMatchPatch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CCC7F7F22010487D002CE5F8 /* DiffMatchPatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4B56CB1718BBC30050A4F2 /* DiffMatchPatch.m */; };
@@ -189,7 +188,6 @@
 		4A776A1A17B3BD5A0049FFA7 /* TestUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUtilities.m; path = Tests/speedtest/TestUtilities.m; sourceTree = SOURCE_ROOT; };
 		4A776A2917B3BE380049FFA7 /* speedtest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = speedtest.m; path = Tests/speedtest/speedtest.m; sourceTree = SOURCE_ROOT; };
 		CCC7F7E52010482E002CE5F8 /* DiffMatchPatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DiffMatchPatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCC7F7E72010482E002CE5F8 /* DiffMatchPatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiffMatchPatch.h; sourceTree = "<group>"; };
 		CCC7F7E82010482E002CE5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -435,7 +433,6 @@
 		CCC7F7E62010482E002CE5F8 /* DiffMatchPatch */ = {
 			isa = PBXGroup;
 			children = (
-				CCC7F7E72010482E002CE5F8 /* DiffMatchPatch.h */,
 				CCC7F7E82010482E002CE5F8 /* Info.plist */,
 			);
 			path = DiffMatchPatch;
@@ -448,7 +445,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCC7F7E92010482E002CE5F8 /* DiffMatchPatch.h in Headers */,
 				CCC7F7F8201048E0002CE5F8 /* DiffMatchPatch.h in Headers */,
 				CCC7F7F9201048E0002CE5F8 /* DiffMatchPatchInternals.h in Headers */,
 				CCC7F7FA201048E0002CE5F8 /* DiffMatchPatchCFUtilities.h in Headers */,
