@@ -27,6 +27,12 @@
 
 
 @import Foundation;
+#import "NSString+UriCompatibility.h"
+#import "DMPatch.h"
+#import "NSString+EscapeHTMLCharacters.h"
+#import "DMDiff.h"
+#import "DiffMatchPatchCFUtilities.h"
+#import "DiffMatchPatchInternals.h"
 
 
 #pragma mark -
