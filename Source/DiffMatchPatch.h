@@ -192,7 +192,7 @@ NSString *patch_patchesToText(NSArray *patches);
 /**
  * Parse a textual representation of patches and return a NSMutableArray of DMPatch objects.
  * 
- * @param textline Text representation of patches.
+ * @param text Text representation of patches.
  * @param error NSError if invalid input.
  * @return NSArray of Patch objects.
  */
@@ -204,7 +204,7 @@ NSArray *patch_parsePatchesFromText(NSString *text, NSError **error);
  * Merge a set of patches onto the text.  Return a patched text, as well
  * as an index set of for each value for which patches were applied.
  * 
- * @param patches					An NSArray of DMPatch objects
+ * @param sourcePatches				An NSArray of DMPatch objects
  * @param text						The old text
  * @param indexesOfAppliedPatches	An NSIndexSet of the patches, passed by reference (optional)
  *									Pass NULL if not required

@@ -132,6 +132,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		384E40B7237B6D9A00859143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Tests/DiffMatchPatch Mac/Base.lproj/MainMenu.xib"; sourceTree = "<group>"; };
 		4A4B55AC1718B09B0050A4F2 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4A4B55AF1718B09B0050A4F2 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4A4B55B01718B09B0050A4F2 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -141,7 +142,6 @@
 		4A4B55FD1718B17F0050A4F2 /* DiffMatchPatch Mac Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DiffMatchPatch Mac Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A4B56121718B5010050A4F2 /* MacAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MacAppDelegate.h; path = "Tests/DiffMatchPatch Mac/MacAppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		4A4B56131718B5010050A4F2 /* MacAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MacAppDelegate.m; path = "Tests/DiffMatchPatch Mac/MacAppDelegate.m"; sourceTree = SOURCE_ROOT; };
-		4A4B56161718B50A0050A4F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Tests/DiffMatchPatch Mac/en.lproj/MainMenu.xib"; sourceTree = SOURCE_ROOT; };
 		4A4B56191718B5140050A4F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = "Tests/DiffMatchPatch Mac/en.lproj/Credits.rtf"; sourceTree = SOURCE_ROOT; };
 		4A4B561B1718B5140050A4F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Tests/DiffMatchPatch Mac/en.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
 		4A4B561F1718B5370050A4F2 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Tests/DiffMatchPatch Mac/main.m"; sourceTree = SOURCE_ROOT; };
@@ -574,7 +574,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0700;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1110;
 				TargetAttributes = {
 					CCC7F7E42010482E002CE5F8 = {
 						CreatedOnToolsVersion = 9.2;
@@ -584,10 +584,11 @@
 			};
 			buildConfigurationList = 4A4B55A21718B0700050A4F2 /* Build configuration list for PBXProject "DiffMatchPatch" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4A4B559E1718B0700050A4F2;
 			productRefGroup = 4A4B55AA1718B09B0050A4F2 /* Products */;
@@ -797,7 +798,7 @@
 		4A4B56151718B50A0050A4F2 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4A4B56161718B50A0050A4F2 /* en */,
+				384E40B7237B6D9A00859143 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -848,6 +849,7 @@
 		4A4B55A31718B0700050A4F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -882,6 +884,7 @@
 		4A4B55A41718B0700050A4F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -923,6 +926,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -962,6 +966,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1248,6 +1253,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1293,6 +1299,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;

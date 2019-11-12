@@ -183,10 +183,11 @@ NSMutableArray *diff_diffsBetweenTextsWithProperties(NSString *text1, NSString *
  * 
  * @param text1 Old NSString to be diffed.
  * @param text2 New NSString to be diffed.
- * @param checklines Speedup flag.  If NO, then don't run a
+ * @param properties contains
+ *  checklines Speedup flag.  If NO, then don't run a
  *     line-level diff first to identify the changed areas.
  *     If YES, then run a faster slightly less optimal diff.
- * @param deadline Time the diff should be complete by.
+ *  deadline Time the diff should be complete by.
  * @return NSMutableArray of Diff objects.
  */
 
@@ -272,7 +273,7 @@ NSMutableArray *diff_computeDiffsBetweenTexts(NSString *text1, NSString *text2, 
  * This speedup can produce non-minimal diffs.
  * @param text1 Old NSString to be diffed.
  * @param text2 New NSString to be diffed.
- * @param deadline Time when the diff should be complete by.
+ * @param properties contains deadline Time when the diff should be complete by.
  * @return NSMutableArray of Diff objects.
  */
 
@@ -355,7 +356,7 @@ NSMutableArray *diff_computeDiffsUsingLineMode(NSString *text1, NSString *text2,
  * See Myers 1986 paper: An O(ND) Difference Algorithm and Its Variations.
  * @param text1 Old string to be diffed.
  * @param text2 New string to be diffed.
- * @param deadline Time at which to bail if not yet complete.
+ * @param properties contains deadline, Time at which to bail if not yet complete.
  * @return NSMutableArray of Diff objects.
  */
 
@@ -542,7 +543,7 @@ NSMutableArray *diff_bisectOfStrings(NSString *text1, NSString *text2, DiffPrope
  * @param text2 New string to be diffed.
  * @param x Index of split point in text1.
  * @param y Index of split point in text2.
- * @param deadline Time at which to bail if not yet complete.
+ * @param properties Time at which to bail if not yet complete.
  * @return NSMutableArray of Diff objects.
  */
 
@@ -656,8 +657,8 @@ NSArray *diff_tokensToCharsForStrings(NSString *text1, NSString *text2, DiffToke
 /**
  * Rehydrate the text in a diff from an NSString of line hashes to real lines
  * of text.
- * @param NSArray of Diff objects.
- * @param NSArray of unique strings.
+ * @param diffs NSArray of Diff objects.
+ * @param lineArray NSArray of unique strings.
  */
 
 void diff_charsToLines(NSArray **diffs, NSArray *lineArray)
@@ -675,8 +676,8 @@ void diff_charsToLines(NSArray **diffs, NSArray *lineArray)
 
 /**
  * Rehydrate the text in a diff from an NSString of token hashes to real text tokens.
- * @param NSArray of Diff objects.
- * @param NSArray of unique strings.
+ * @param diffs NSArray of Diff objects.
+ * @param tokenArray NSArray of unique strings.
  */
 
 void diff_charsToTokens(NSArray **diffs, NSArray *tokenArray)
@@ -695,7 +696,7 @@ void diff_charsToTokens(NSArray **diffs, NSArray *tokenArray)
 /**
  * Reorder and merge like edit sections.  Merge equalities.
  * Any edit section can move as long as it doesn't cross an equality.
- * @param diffs NSMutableArray of Diff objects.
+ * @param inputDiffs NSMutableArray of Diff objects.
  */
 
 void diff_cleanupMerge(NSMutableArray **inputDiffs)
@@ -834,7 +835,7 @@ void diff_cleanupMerge(NSMutableArray **inputDiffs)
  * Look for single edits surrounded on both sides by equalities
  * which can be shifted sideways to align the edit to a word boundary.
  * e.g: The c<ins>at c</ins>ame. -> The <ins>cat </ins>came.
- * @param diffs NSMutableArray of Diff objects.
+ * @param mutableDiffs NSMutableArray of Diff objects.
  */
 
 void diff_cleanupSemanticLossless(NSMutableArray **mutableDiffs)
@@ -1257,7 +1258,7 @@ NSArray *diff_diffsFromOriginalTextAndDelta(NSString *text1, NSString *delta, NS
  *		e.g. "The cat" vs "The big cat", 1->1, 5->8
  * 
  * @param diffs NSMutableArray of DMDiff objects.
- * @param loc Location within text1.
+ * @param location Location within text1.
  * @return Location within text2.
  */
 
@@ -1521,7 +1522,7 @@ NSUInteger match_locationOfMatchInTextWithOptions(NSString *text, NSString *patt
  * Returns NSNotFound if no match found.
  * @param text				The text to search.
  * @param pattern			The pattern to search for.
- * @param nearestLocation	The location to search around.
+ * @param approximateLocation	The location to search around.
  * @param properties		See the MatchProperties struct in DiffMatchPatchInternals.h for more info
  * @return Index of the best match or NSNotFound.
  */
@@ -1566,7 +1567,7 @@ NSUInteger match_locationOfMatchInTextWithProperties(NSString *text, NSString *p
  * Bitap algorithm.   Returns NSNotFound if no match found.
  * @param text The text to search.
  * @param pattern The pattern to search for.
- * @param loc The location to search around.
+ * @param approximateLocation The location to search around.
  * @return Best match index or NSNotFound.
  */
 
@@ -1700,7 +1701,7 @@ NSUInteger match_bitapOfTextAndPattern(NSString *text, NSString *pattern, NSUInt
  * Compute and return the score for a match with e errors and x location.
  * @param e Number of errors in match.
  * @param x Location of match.
- * @param loc Expected location of match.
+ * @param approximateLocation Expected location of match.
  * @param pattern Pattern being sought.
  * @return Overall score for match (0.0 = good, 1.0 = bad).
  */
@@ -1942,7 +1943,7 @@ NSString *patch_applyPatchesToText(NSArray *sourcePatches, NSString *text, NSInd
  * Merge a set of patches onto the text.  Return a patched text, as well
  * as an index set of for each value for which patches were applied.
  * 
- * @param patches					An NSArray of DMPatch objects
+ * @param sourcePatches					An NSArray of DMPatch objects
  * @param text						The old text
  * @param indexesOfAppliedPatches	An NSIndexSet of the patches, passed by reference (optional)
  * @param properties				PatchProperties defining the properties used to patch the text
@@ -2299,7 +2300,7 @@ NSArray *patch_parsePatchesFromText(NSString *textline, NSError **error)
 	NSString *patchHeaderEnd = @"@@";
 	NSString *optionalValueDelimiter = @",";
 	BOOL scanSuccess, hasOptional;
-	NSInteger scannedValue, optionalValue;
+    NSInteger scannedValue = 0, optionalValue;
 	NSDictionary *errorDetail = nil;
 	NSString *textAtTextPointer = nil;
 	

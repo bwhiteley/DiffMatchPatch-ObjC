@@ -543,8 +543,8 @@ CFStringRef diff_rangesToCharsMungeCFStringCreate(CFStringRef text, CFMutableArr
  * Split a text into a list of strings.   Reduce the texts to a CFStringRef of
  * hashes where where each Unicode character represents one word (or boundary between words).
  * @param text CFString to encode.
- * @param lineArray CFMutableArray of unique strings.
- * @param lineHash Map of strings to indices.
+ * @param tokenArray CFMutableArray of unique strings.
+ * @param tokenHash Map of strings to indices.
  * @return Encoded CFStringRef.
  */
 
@@ -559,8 +559,8 @@ CFStringRef diff_wordsToCharsMungeCFStringCreate(CFStringRef text, CFMutableArra
  * Split a text into a list of strings.   Reduce the texts to a CFStringRef of
  * hashes where where each Unicode character represents one sentence.
  * @param text CFString to encode.
- * @param lineArray CFMutableArray of unique strings.
- * @param lineHash Map of strings to indices.
+ * @param tokenArray CFMutableArray of unique strings.
+ * @param tokenHash Map of strings to indices.
  * @return Encoded CFStringRef.
  */
 
@@ -575,8 +575,8 @@ CFStringRef diff_sentencesToCharsMungeCFStringCreate(CFStringRef text, CFMutable
  * Split a text into a list of strings.   Reduce the texts to a CFStringRef of
  * hashes where where each Unicode character represents one paragraph.
  * @param text CFString to encode.
- * @param lineArray CFMutableArray of unique strings.
- * @param lineHash Map of strings to indices.
+ * @param tokenArray CFMutableArray of unique strings.
+ * @param tokenHash Map of strings to indices.
  * @return Encoded CFStringRef.
  */
 
@@ -593,8 +593,8 @@ CFStringRef diff_paragraphsToCharsMungeCFStringCreate(CFStringRef text, CFMutabl
  * In this context “line break” does not refere to “something you get when you press the return-key”.
  * Instead it the refers to “line break boundaries” as defined in “UAX #14: Unicode Line Breaking Algorithm” (http://www.unicode.org/reports/tr14/).
  * @param text CFString to encode.
- * @param lineArray CFMutableArray of unique strings.
- * @param lineHash Map of strings to indices.
+ * @param tokenArray CFMutableArray of unique strings.
+ * @param tokenHash Map of strings to indices.
  * @return Encoded CFStringRef.
  */
  
