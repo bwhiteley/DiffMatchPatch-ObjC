@@ -129,8 +129,8 @@
 /**
  * Increase the context until it is unique,
  * but don't let the pattern expand beyond DIFF_MATCH_MAX_BITS.
- * @param patch The patch to grow.
  * @param text Source text.
+ * @param patchMargin The patch to grow.
  */
 
 - (void)addContext:(NSString *)text withMargin:(NSInteger)patchMargin maximumBits:(NSUInteger)maximumBits

@@ -29,8 +29,8 @@
 
 /**
  * Constructor.  Initializes the diff with the provided values.
- * @param operation One of DIFF_INSERT, DIFF_DELETE or DIFF_EQUAL.
- * @param text The text being applied.
+ * @param anOperation One of DIFF_INSERT, DIFF_DELETE or DIFF_EQUAL.
+ * @param aText The text being applied.
  */
 + (id)diffWithOperation:(DMDiffOperation)anOperation andText:(NSString *)aText
 {
